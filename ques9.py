@@ -1,12 +1,13 @@
-def student_data(student_id,**kwargs):
-    print("Student ID : ", student_id)
-    if 'student_name' in kwargs:
-        print("Student name : ",kwargs['student_name'])
-    if 'student_class' in kwargs:
-        print("Student class : ",kwargs['student_class'])
-        
-student_data(student_id= '21107091',student_name = 'Anirudh Ralhan')
-print()
-student_data(student_id= '21107091',student_class = 'Mechanical')
-print()
-student_data(student_id= '21107091',student_name = 'Anirudh Ralhan',student_class = 'Mechanical')
+class py_solution:
+   def is_valid_parenthese(self, str1):
+        stack, pchar = [], {"(": ")", "{": "}", "[": "]"}
+        for parenthese in str1:
+            if parenthese in pchar:
+                stack.append(parenthese)
+            elif len(stack) == 0 or pchar[stack.pop()] != parenthese:
+                return False
+        return len(stack) == 0
+
+print(py_solution().is_valid_parenthese("()"))
+print(py_solution().is_valid_parenthese("()[]{}"))
+print(py_solution().is_valid_parenthese("[)"))
